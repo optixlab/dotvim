@@ -1,5 +1,5 @@
 " Ref http://mirnazim.org/writings/vim-plugins-i-use/
-
+" Following for pathogen. Call before filetype!
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -8,7 +8,14 @@ autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 
 " Config solarized Vim with light color
-syntax enable
+set hidden
+set number
+set vb t_vb=
+set ts=2 sts=2 sw=2 expandtab
+syntax on
+syntax enable "What's the difference?"
+command! Status echo "All systems are go!"
+
 set background=light
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
@@ -16,3 +23,6 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
+if has("autocmd")
+  filetype plugin indent on
+endif
