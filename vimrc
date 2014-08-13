@@ -16,12 +16,15 @@ syntax on
 syntax enable "What's the difference?"
 command! Status echo "All systems are go!"
 
-set background=light
+set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
+
+" Markdown to HTML
+nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 
 if has("autocmd")
   filetype plugin indent on
