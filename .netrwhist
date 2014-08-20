@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/jharvard/.vim/bundle'
 let g:netrw_dirhist_2='/home/jharvard/.vim/bundle/pyflakes'
 let g:netrw_dirhist_3='/home/jharvard/.vim/bundle/pyflakes/ftplugin'
 let g:netrw_dirhist_4='/home/jharvard/.vim/bundle/pyflakes'
 let g:netrw_dirhist_5='/home/jharvard/vhosts/localhost/public/angular/reactiveDataVis'
 let g:netrw_dirhist_6='/home/jharvard/vhosts/localhost/public/angular/reactiveDataVis/examples'
+let g:netrw_dirhist_7='/home/yash/Dropbox/share/code/videos/udemy/prog4entr/djangoTutorial/skillshare/src'
+let g:netrw_dirhist_8='/home/yash/Dropbox/share/code/videos/udemy/prog4entr/djangoTutorial/skillshare/src/mvp_landing'

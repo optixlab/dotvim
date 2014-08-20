@@ -90,6 +90,19 @@ Note: git submodule init and git submodule update need to be run every time a ne
        let g:solarized_visibility="high"
        colorscheme solarized
 
- Solarized prefers that the terminal also use Solarized palettes. See the homepage for details.
+	Solarized prefers that the terminal also use Solarized palettes. 
+	See the homepage for details.
 
+11. jedi-vim auto complete
 
+	73 git submodule add git://github.com/davidhalter/jedi-vim.git bundle/jedi-vim
+	74 git remote set-url origin git@github.com:my_user_name/my_repo.git
+
+## Git Push from Lubuntu:
+
+	Pushing from lubuntu gave error. Apparently, git does not allow push over git 
+	protocol. Need to change the URL of the origin:
+	git remote set-url origin git@github.com:my_user_name/my_repo.git
+
+	My solution:
+	  git remote set-url origin https://github.com/optixlab/dotvim.git
