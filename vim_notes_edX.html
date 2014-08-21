@@ -1,0 +1,151 @@
+<h1>Vim setup</h1>
+
+<p><a href="http://mirnazim.org/writings/vim-plugins-i-use/">Ref</a></p>
+
+<p>Always use Pathogen</p>
+
+<p>33  git config --global user.email "optixlab@gmail.com"
+   34  git config --global user.name "Yashesh A. Shroff"
+   27  git clone git://github.com/tpope/vim-pathogen.git pathogen
+   28  mv pathogen/autoload/ .vim/autoload
+   29  cd .vim
+   30  git init
+   31  git add .
+   35  git commit -m "Initial commit with pathogen"
+   36  vi .vimrc
+    call pathogen#runtime<em>append</em>all_bundles()
+    call pathogen#helptags()</p>
+
+<p>That is all needed for Vim setup with pathogen. 
+Move all plugins to their own directories. 
+Example:</p>
+
+<p>37  mkdir bundle
+This command clones the git repository to the submodule path whilst instructing the repository to treat the path as a submodule.
+   38  git submodule add git://github.com/tpope/vim-fugitive.git bundle/fugitive
+   40  git status
+   41  cat .gitmodules</p>
+
+<p>In other machines: 
+     Clone git repository to home directory on new machine.
+     git clone git://github.com/optixlab/dotvim
+     cd ~/.vim
+     git pull
+     Create symbolic links for vimrc and gvimrc files as instructed in README.md</p>
+
+<p>Any new commands on the original machines can be made
+   git add .
+   git commit -m "change log"
+   git push</p>
+
+<p>Other machine
+     cd ~/.vim
+     git pull</p>
+
+<p>To sync plugins, on other machine cd to .vim/:
+     git submodule init &amp;&amp; git submodule update</p>
+
+<p>Shows changes to be committed and .gitmodules contains submodule information.
+Note: git submodule init and git submodule update need to be run every time a new submodule is added. git submodule foreach git pull command is used to pull latest upstream changes.</p>
+
+<ol>
+<li><p>DelimitMate: Intelligent autocomplete for quotes, etc.</p>
+
+<p>45  git submodule add git://github.com/Raimondi/delimitMate.git bundle/delimitmate
+47  git submodule init &amp;&amp; git submodule update</p></li>
+<li><p>CloseTag: Intelligently close HTML tags</p>
+
+<p>56  git submodule add git://github.com/docunext/closetag.vim.git bundle/closetag
+57  git submodule init &amp;&amp; git submodule update</p></li>
+<li><p>Pyflakes: Liniting for python files</p></li>
+<li><p>SuperTab: Word completion on steroids</p>
+
+<p>66  git submodule add git://github.com/vim-scripts/supertab.git bundle/supertab
+67  git submodule init &amp;&amp; git submodule update</p></li>
+<li><p>Fugitive: Git integration</p>
+
+<p>68  git submodule add git://github.com/tpope/vim-fugitive.git bundle/fugitive
+72  git submodule init &amp;&amp; git submodule update</p></li>
+<li><p>Tagbar: Awesome source code</p>
+
+<p>69  git submodule add git://github.com/majutsushi/tagbar.git bundle/tagbar
+72  git submodule init &amp;&amp; git submodule update</p></li>
+<li><p>Solarized Colorscheme</p>
+
+<p>71  git submodule add  git://github.com/altercation/vim-colors-solarized.git bundle/solarized
+72  git submodule init &amp;&amp; git submodule update</p>
+
+<p>export TERM="xterm-256color"</p>
+
+<p>In .vimrc:
+   set background=dark
+   let g:solarized<em>termtrans=1
+   let g:solarized</em>termcolors=256
+   let g:solarized<em>contrast="high"
+   let g:solarized</em>visibility="high"
+   colorscheme solarized</p>
+
+<p>Solarized prefers that the terminal also use Solarized palettes. 
+See the homepage for details.</p></li>
+<li><p>jedi-vim auto complete</p>
+
+<p>73 git submodule add git://github.com/davidhalter/jedi-vim.git bundle/jedi-vim
+74 git remote set-url origin git@github.com:my<em>user</em>name/my_repo.git</p></li>
+</ol>
+
+<h2>Git Push from Lubuntu:</h2>
+
+<pre><code>Pushing from lubuntu gave error. Apparently, git does not allow push over git 
+protocol. Need to change the URL of the origin:
+git remote set-url origin git@github.com:my_user_name/my_repo.git
+
+My solution:
+  git remote set-url origin https://github.com/optixlab/dotvim.git
+</code></pre>
+
+<h3><a href="https://www.youtube.com/playlist?list=PL036A7DC4BB7CA694">TutsPlus</a></h3>
+
+<ol>
+<li><p>sparkup</p>
+
+<p>Zen coding for HTML. Usage:</p>
+
+<p>Use CTRL-N / P for next previous
+<code>html &gt; head &lt; body &gt; div#container { Some content }
+</code> nav > ul > li*4 > a[href][target=_blank] {Some link}<code>
+</code>header > ul &lt; + div#content { My Content } + footer > div#footer { My footer }<code>
+</code>div#container > header > h1 { My Site } &lt; + div#content { My Content } + footer > div#footer { My footer }<code>
+Press</code>CLTL-e`</p>
+
+<p>75 git submodule add git://github.com/rstacruz/sparkup.git bundle/sparkup
+76 git submodule init &amp;&amp; git submodule update</p></li>
+<li><p>Easy Motion</p>
+
+<p>77 git submodule add git://github.com/Lokaltog/vim-easymotion bundle/easymotion
+78 git submodule init &amp;&amp; git submodule update</p>
+
+<p>Uses modifier key <leader>w (in my .vimrc case that is a comma)
+Ex. ,w[Switch]C &lt;-- C for change. [Switch] color coded letters will show up.</p></li>
+<li><p>NERDTree</p>
+
+<p>Replacement for file explorer</p>
+
+<p>79 git submodule add git://github.com/scrooloose/nerdtree.git bundle/nerdtree
+80 git submodule init &amp;&amp; git submodule update</p>
+
+<p><code>
+:NERDTree
+? to toggle help
+o to open, enter to open
+s in splitmode
+cd: change to selected directory
+C will only show the selected directory
+:pwd 
+:Bookmark django # set bookmarks
+</code></p></li>
+<li><p>Snipmate</p>
+
+<p>For all types of macros</p>
+
+<p>git msanders/snipmate.git</p></li>
+</ol>
