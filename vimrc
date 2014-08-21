@@ -43,8 +43,8 @@ call togglebg#map("<F5>")
 nmap <Space> i_<Esc>r
 
 " Nice Python tab settings
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smarttab
 
 " End Customization from the above Ref
@@ -73,6 +73,9 @@ autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bu
 
 " Markdown to HTML
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
+
+" Set gvim tab label. Use :help 'statusline' for options
+set guitablabel=%t
 
 if has("autocmd")
    filetype plugin indent on
