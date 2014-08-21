@@ -106,3 +106,53 @@ Note: git submodule init and git submodule update need to be run every time a ne
 
 	My solution:
 	  git remote set-url origin https://github.com/optixlab/dotvim.git
+
+### [TutsPlus](https://www.youtube.com/playlist?list=PL036A7DC4BB7CA694)
+
+12. sparkup
+
+	Zen coding for HTML. Usage:
+
+  Use CTRL-N / P for next previous
+	` html > head < body > div#container { Some content } 
+	` nav > ul > li*4 > a[href][target=_blank] {Some link}`
+	`header > ul < + div#content { My Content } + footer > div#footer { My footer }`
+  `div#container > header > h1 { My Site } < + div#content { My Content } + footer > div#footer { My footer }`
+	Press `CLTL-e`
+
+	75 git submodule add git://github.com/rstacruz/sparkup.git bundle/sparkup
+  76 git submodule init && git submodule update
+
+13. Easy Motion
+
+	77 git submodule add git://github.com/Lokaltog/vim-easymotion bundle/easymotion
+  78 git submodule init && git submodule update
+  
+  Uses modifier key <leader>w (in my .vimrc case that is a comma)
+	Ex. ,w[Switch]C <-- C for change. [Switch] color coded letters will show up.
+
+14. NERDTree
+
+	Replacement for file explorer
+
+	
+	79 git submodule add git://github.com/scrooloose/nerdtree.git bundle/nerdtree
+  80 git submodule init && git submodule update
+
+	```
+	:NERDTree
+	? to toggle help
+	o to open, enter to open
+	s in splitmode
+	cd: change to selected directory
+	C will only show the selected directory
+	:pwd 
+	:Bookmark django # set bookmarks
+	```
+15. Snipmate
+
+	For all types of macros
+
+	git msanders/snipmate.git
+
+
