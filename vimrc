@@ -80,3 +80,49 @@ set guitablabel=%t
 if has("autocmd")
    filetype plugin indent on
 endif
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+syntax enable
+set guifont=consolas:h10
+
+set incsearch
+set hlsearch
+set number
+set wildmode=list:longest
+set nowrap
+set laststatus=2
+
+source $VIMRUNTIME/mswin.vim
+
+imap jk <Esc>
+set background=dark
+let g:solarized_termtrans=1 
+let g:solarized_termcolors=256 
+let g:solarized_contrast="high" 
+let g:solarized_visibility="high" 
+colorscheme solarized
+
+call pathogen#infect()
+call pathogen#helptags()
+
+syntax enable
+set guifont=consolas:h10
+
+set incsearch
+set hlsearch
+set number
+set wildmode=list:longest
+set nowrap
+set laststatus=2
+
+source $VIMRUNTIME/mswin.vim
+
+imap jk <Esc>
+set background=dark
+let g:solarized_termtrans=1 
+let g:solarized_termcolors=256 
+let g:solarized_contrast="high" 
+let g:solarized_visibility="high" 
+colorscheme solarized
+
